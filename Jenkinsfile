@@ -11,8 +11,7 @@ pipeline {
                 sh "/opt/maven/bin/mvn test"
             }
         }
-        stage('--package--') {
-            agent {label 'ec2_slave1'}
+        stage('--package--') 
             steps {
                  sh "/opt/maven/bin/mvn package"
             }
