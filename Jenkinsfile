@@ -11,10 +11,10 @@ pipeline {
                 sh "/opt/maven/bin/mvn test"
             }
         }
-        stage('--package--') 
+        stage('--package--') {
             steps {
-                 sh "/opt/maven/bin/mvn package"
+                sh "/opt/maven/bin/mvn package"
             }
         }
     }
-
+}
