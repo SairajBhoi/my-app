@@ -3,17 +3,18 @@ pipeline {
     stages {
         stage('---clean---') {
             steps {
-                sh "/opt/maven/bin/mvn clean"
+                sh "mvn clean"
             }
         }
         stage('--test--') {
             steps {
-                sh "/opt/maven/bin/mvn test"
+                sh "mvn test"
             }
         }
         stage('--package--') {
+            agent {label 'ec2_slave1'}
             steps {
-                sh "/opt/maven/bin/mvn package"
+                sh "mvn package"
             }
         }
     }
